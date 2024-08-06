@@ -8,6 +8,7 @@ struct strvec;
  * The character that begins a commented line in user-editable file
  * that is subject to stripspace.
  */
+extern const char comment_line_str_default[];
 extern const char *comment_line_str;
 extern int auto_comment_line_char;
 
