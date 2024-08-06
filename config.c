@@ -1596,6 +1596,8 @@ static int git_default_core_config(const char *var, const char *value,
 		else if (value[0]) {
 			if (strchr(value, '\n'))
 				return error(_("%s cannot contain newline"), var);
+			if (comment_line_str != comment_line_str_default)
+				free((char *) comment_line_str);
 			comment_line_str = xstrdup(value);
 			auto_comment_line_char = 0;
 		} else
